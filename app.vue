@@ -1,10 +1,14 @@
 <script setup lang="ts">
 useSeoMeta({
-  title: 'NuxtHub Starter',
-  description: 'A Nuxt template to build your full-stack application on the edge.',
+  title: 'Duolingo Data Dashboard',
+  description: 'A dashboard to visualize your Duolingo learning data. Not officially affiliated with Duolingo.',
 })
 </script>
 
 <template>
-  <NuxtPage />
+  <div>
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
+  </div>
 </template>
