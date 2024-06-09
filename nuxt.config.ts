@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ['@nuxthub/core'],
+  modules: ['@nuxthub/core', '@nuxtjs/tailwindcss', 'shadcn-nuxt'],
   hub: {
     database: true,
   },
@@ -11,4 +11,5 @@ export default defineNuxtConfig({
       openAPI: true,
     },
   },
+
 })
