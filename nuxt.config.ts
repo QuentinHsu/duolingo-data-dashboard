@@ -1,5 +1,4 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import packageJson from './package.json'
 
 export default defineNuxtConfig({
   css: ['~/assets/css/variables.css'],
@@ -11,6 +10,17 @@ export default defineNuxtConfig({
   colorMode: {
     classSuffix: '',
   },
+  routeRules: {
+    '/': {
+      prerender: true,
+    },
+    '/dashboard/**': {
+      ssr: false,
+    },
+    '/login': {
+      ssr: false,
+    },
+  },
   nitro: {
     experimental: {
       // Enable Server API documentation within NuxtHub
@@ -18,6 +28,7 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
+    token: 'duolingo',
   },
 
 })
