@@ -1,18 +1,21 @@
 <script setup>
 import Badge from '@/components/ui/badge'
-
-const showMenu = ref(false)
 </script>
 
 <template>
-  <section class="pb-6 bg-[var(--duolingo-feather-green)] dark:bg-inherit w-full">
-    <nav class="container relative z-50 h-20 select-none">
+  <section class="bg-[var(--duolingo-feather-green)] dark:bg-inherit w-full">
+    <nav class="container relative z-50 select-none">
       <div
-        class="container relative flex flex-wrap items-center justify-between h-24 px-0 mx-auto overflow-hidden font-medium border-b border-gray-200 md:overflow-visible"
+        class="container h-20 relative flex flex-wrap items-center justify-between px-2 lg:px-10 mx-auto overflow-hidden font-medium md:overflow-visible"
       >
-        <div class="flex items-center justify-start  h-full pr-4">
-          <nuxt-link to="/" class="text-lg font-bold text-white dark:text-[var(--duolingo-feather-green)]">
-            Duolingo Data Dashboard
+        <div class="flex items-center justify-start h-full pr-4">
+          <nuxt-link to="/" class="h-full flex justify-between items-center text-lg font-bold text-white dark:text-[var(--duolingo-feather-green)]">
+            <div class="logo drop-shadow-lg block">
+              <img src="https://design.duolingo.com/86230c9ad10d9f08b785.svg" alt="Duolingo logo" class="w-8 h-8">
+            </div>
+            <div class="hidden lg:block ml-2">
+              Duolingo Data Dashboard
+            </div>
           </nuxt-link>
           <TooltipProvider :ignore-non-keyboard-focus="true">
             <Tooltip>
@@ -29,17 +32,12 @@ const showMenu = ref(false)
             </Tooltip>
           </TooltipProvider>
         </div>
-        <div
-          class="absolute top-0 left-0 items-start w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center lg:text-base md:bg-transparent md:p-0 md:flex justify-end"
-          :class="{ 'flex fixed': showMenu, 'hidden': !showMenu }"
-          @touchmove.prevent
-        >
-          <div class="flex justify-between items-center">
-            <SwitchTheme />
-            <nuxt-link to="/dashboard" class="text-white dark:text-[var(--duolingo-mask-green)] not-first:ml-5">
-              Dashboard
-            </nuxt-link>
-          </div>
+
+        <div class="flex justify-between items-center">
+          <SwitchTheme />
+          <nuxt-link to="/dashboard" class="text-white dark:text-[var(--duolingo-mask-green)] not-first:ml-1">
+            Dashboard
+          </nuxt-link>
         </div>
       </div>
     </nav>
