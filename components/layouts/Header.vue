@@ -5,12 +5,12 @@ const showMenu = ref(false)
 </script>
 
 <template>
-  <section class=" bg-[var(--duolingo-feather-green)] dark:bg-inherit w-full">
+  <section class="pb-6 bg-[var(--duolingo-feather-green)] dark:bg-inherit w-full">
     <nav class="container relative z-50 h-20 select-none">
       <div
         class="container relative flex flex-wrap items-center justify-between h-24 px-0 mx-auto overflow-hidden font-medium border-b border-gray-200 md:overflow-visible"
       >
-        <div class="flex">
+        <div class="flex items-center justify-start  h-full pr-4">
           <nuxt-link to="/" class="text-lg font-bold text-white dark:text-[var(--duolingo-feather-green)]">
             Duolingo Data Dashboard
           </nuxt-link>
@@ -30,7 +30,7 @@ const showMenu = ref(false)
           </TooltipProvider>
         </div>
         <div
-          class="top-0 left-0 items-start w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center md:w-3/4 lg:text-base md:bg-transparent md:p-0 md:relative md:flex justify-end"
+          class="absolute top-0 left-0 items-start w-full h-full p-4 text-sm bg-gray-900 bg-opacity-50 md:items-center lg:text-base md:bg-transparent md:p-0 md:flex justify-end"
           :class="{ 'flex fixed': showMenu, 'hidden': !showMenu }"
           @touchmove.prevent
         >
