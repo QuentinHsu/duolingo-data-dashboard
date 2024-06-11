@@ -38,6 +38,9 @@ import Badge from '@/components/ui/badge'
           <nuxt-link to="/dashboard" class="text-white dark:text-[var(--duolingo-mask-green)] not-first:ml-1">
             Dashboard
           </nuxt-link>
+          <div class="not-first:ml-3">
+            <LoginLogout />
+          </div>
         </div>
       </div>
     </nav>
