@@ -2,7 +2,8 @@
 import { LogOut } from 'lucide-vue-next'
 
 function onClickConfirm() {
-  localStorage.removeItem('token')
+  const storeLogin = useLoginStore()
+  storeLogin.logout()
   navigateTo('/login')
 }
 </script>

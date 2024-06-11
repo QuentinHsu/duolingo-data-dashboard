@@ -1,4 +1,4 @@
-<script setup>
+<script setup lang="ts">
 import { AlertCircle } from 'lucide-vue-next'
 import { z } from 'zod'
 import { toast } from 'vue-sonner'
@@ -17,14 +17,16 @@ const loginFieldConfig = {
 
 const { previewMode } = useRuntimeConfig().public
 
-async function onSubmit(form) {
+async function onSubmit(form: z.infer<typeof LoginSchema>) {
+  const storeLogin = useLoginStore()
   try {
-    localStorage.setItem('token', form.token)
+    storeLogin.login(form.token)
     await useAPI('/api/verify')
     navigateTo('/dashboard')
   }
-  catch (e) {
+  catch (e: any) {
     console.error(e)
+    storeLogin.logout()
     toast.error('Login failed, please try again.', {
       description: e.message,
     })
@@ -34,7 +36,7 @@ onMounted(async () => {
   try {
     await useAPI('/api/verify')
   }
-  catch (error) {
+  catch (error: any) {
     toast.error('Please login to access the dashboard.', {
       description: error.message,
     })

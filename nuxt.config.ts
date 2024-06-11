@@ -3,7 +3,7 @@
 export default defineNuxtConfig({
   css: ['~/assets/css/variables.css'],
   devtools: { enabled: true },
-  modules: ['@nuxthub/core', '@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/color-mode'],
+  modules: ['@nuxthub/core', '@nuxtjs/tailwindcss', 'shadcn-nuxt', '@nuxtjs/color-mode', '@pinia/nuxt', '@pinia-plugin-persistedstate/nuxt'],
   hub: {
     database: true,
   },
@@ -28,7 +28,7 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
-    token: 'duolingo',
+    token: 'duolingo', // NUXT_TOKEN
   },
 
 })

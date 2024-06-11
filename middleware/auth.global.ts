@@ -1,11 +1,12 @@
 import { defineNuxtRouteMiddleware, navigateTo } from 'nuxt/app'
 
 export default defineNuxtRouteMiddleware(async (to) => {
+  const storeLogin = useLoginStore()
   if (import.meta.server)
     return
 
   if (to.path.startsWith('/dashboard') && to.path !== '/login') {
-    if (!window.localStorage.getItem('token')) {
+    if (!storeLogin.$state.token) {
       return navigateTo('/login')
     }
   }
