@@ -4,9 +4,9 @@ import ImgIconDuolingo from '@/assets/images/icon-duolingo.svg'
 
 <template>
   <section class="bg-[var(--duolingo-feather-green)] dark:bg-inherit w-full">
-    <nav class="container relative z-50 select-none">
+    <nav class="relative z-50 select-none">
       <div
-        class="container h-20 relative flex flex-wrap items-center justify-between px-2 lg:px-10 mx-auto overflow-hidden font-medium md:overflow-visible"
+        class="container relative flex flex-wrap items-center justify-between py-4 px-4 lg:px-10 mx-auto overflow-hidden font-medium md:overflow-visible"
       >
         <div class="flex items-center justify-start h-full pr-4">
           <nuxt-link to="/" class="h-full flex justify-between items-center text-lg font-bold text-white dark:text-[var(--duolingo-feather-green)]">
