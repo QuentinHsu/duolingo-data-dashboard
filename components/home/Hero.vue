@@ -1,10 +1,12 @@
 <script setup lang="ts">
+import ImgHeroDuolingo from '@/assets/images/hero-duolingo.svg'
+
 const { title, slogan } = useAppConfig()
 </script>
 
 <template>
   <div class="w-full flex flex-col md:flex-row justify-center items-center mt-20">
-    <img class="w-6/12 lg:w-3/12" src="https://design.duolingo.com/f432eb8c3e03de216d20.svg" alt="Duolingo logo">
+    <img class="w-6/12 lg:w-3/12" :src="ImgHeroDuolingo" alt="Duolingo logo">
     <div>
       <h1 class="text-4xl font-bold text-center mt-8">
         {{ title }}

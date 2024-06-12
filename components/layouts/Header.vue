@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import ImgIconDuolingo from '@/assets/images/icon-duolingo.svg'
 </script>
 
 <template>
@@ -10,7 +11,7 @@
         <div class="flex items-center justify-start h-full pr-4">
           <nuxt-link to="/" class="h-full flex justify-between items-center text-lg font-bold text-white dark:text-[var(--duolingo-feather-green)]">
             <div class="logo drop-shadow-lg block">
-              <img src="https://design.duolingo.com/86230c9ad10d9f08b785.svg" alt="Duolingo logo" class="w-8 h-8">
+              <img :src="ImgIconDuolingo" alt="Duolingo logo" class="w-8 h-8">
             </div>
             <div class="hidden lg:block ml-2">
               Duolingo Data Dashboard
