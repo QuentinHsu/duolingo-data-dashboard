@@ -1,5 +1,12 @@
 <script setup lang="ts">
+import { useLoginStore } from '../../stores/login'
 import ImgIconDuolingo from '@/assets/images/icon-duolingo.svg'
+
+const showLoginOut = computed(() => {
+  const storeLogin = useLoginStore()
+  const route = useRoute()
+  return storeLogin.isLogin && route.path !== '/login'
+})
 </script>
 
 <template>
@@ -38,7 +45,7 @@ import ImgIconDuolingo from '@/assets/images/icon-duolingo.svg'
           <nuxt-link to="/dashboard" class="text-white dark:text-[var(--duolingo-mask-green)] not-first:ml-1">
             Dashboard
           </nuxt-link>
-          <div class="not-first:ml-3">
+          <div v-show="showLoginOut" class="not-first:ml-3">
             <LoginLogout />
           </div>
         </div>
