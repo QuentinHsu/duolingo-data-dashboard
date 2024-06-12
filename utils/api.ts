@@ -6,7 +6,7 @@ export function useAPI(api: string, options?: object): Promise<unknown> {
 
   return $fetch(api, defu(options || {}, {
     headers: {
-      Authorization: `Bearer ${storeLogin.$state.token || ''}`,
+      Authorization: `Bearer ${storeLogin.getToken || ''}`,
     },
   })).catch((error) => {
     if (error?.data?.statusMessage) {

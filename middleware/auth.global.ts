@@ -6,7 +6,7 @@ export default defineNuxtRouteMiddleware(async (to) => {
     return
 
   if (to.path.startsWith('/dashboard') && to.path !== '/login') {
-    if (!storeLogin.$state.token) {
+    if (!storeLogin.getToken) {
       return navigateTo('/login')
     }
   }

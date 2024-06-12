@@ -3,7 +3,7 @@ export const useLoginStore = defineStore('loginStore', {
     token: '',
   }),
   getters: {
-    token: state => (state.token || ''),
+    getToken: state => (state.token || ''),
     isLogin: state => !!state.token,
   },
   actions: {
