@@ -2,6 +2,7 @@
 import { AlertCircle } from 'lucide-vue-next'
 import { z } from 'zod'
 import { toast } from 'vue-sonner'
+import type { GenericObject } from 'vee-validate'
 
 const LoginSchema = z.object({
   token: z.string().describe('token'),
@@ -17,7 +18,8 @@ const loginFieldConfig = {
 
 const { previewMode } = useRuntimeConfig().public
 
-async function onSubmit(form: z.infer<typeof LoginSchema>) {
+async function onSubmit(event: GenericObject) {
+  const form = event as z.infer<typeof LoginSchema>
   const storeLogin = useLoginStore()
   try {
     storeLogin.login(form.token)
@@ -56,7 +58,7 @@ onMounted(async () => {
     </CardHeader>
     <CardContent class="grid gap-4">
       <AutoForm
-        class="space-y-6"
+        class="space-y-10"
         :schema="LoginSchema"
         :field-config="loginFieldConfig"
         @submit="onSubmit"
