@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@nuxthub/core": "^0.6.2",
+    "@nuxtjs/i18n": "^8.3.1",
     "@radix-icons/vue": "^1.0.0",
     "nuxt": "^3.11.2",
     "shadcn-nuxt": "^0.10.4"

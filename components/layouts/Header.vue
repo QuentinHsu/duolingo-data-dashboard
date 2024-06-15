@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { Cloud } from 'lucide-vue-next'
 import { useLoginStore } from '../../stores/login'
 import ImgIconDuolingo from '@/assets/images/icon-duolingo.svg'
 
@@ -21,33 +22,27 @@ const showLoginOut = computed(() => {
               <img :src="ImgIconDuolingo" alt="Duolingo logo" class="w-8 h-8">
             </div>
             <div class="hidden lg:block ml-2">
-              Duolingo Data Dashboard
+              {{ $t('header.title') }}
             </div>
           </nuxt-link>
-          <TooltipProvider :ignore-non-keyboard-focus="true">
-            <Tooltip>
-              <TooltipTrigger as-child>
-                <Badge variant="outline" class="ml-2 text-white dark:text-[var(--duolingo-feather-green)]">
-                  Unofficial
-                </Badge>
-              </TooltipTrigger>
-              <TooltipContent class="p-2 bg-[var(--duolingo-feather-green)] dark:bg-inherit">
-                <div class="text-sm text-white dark:text-[var(--duolingo-feather-green)] opacity-50 transition ease-in-out delay-150 hover:opacity-100 hover:scale-105 duration-300">
-                  A dashboard to visualize your Duolingo learning data. Not officially affiliated with Duolingo.
-                </div>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
+          <ClientOnly>
+            <Badge variant="outline" class="ml-2 text-white dark:text-[var(--duolingo-feather-green)]">
+              {{ $t("header.unofficial") || '' }}
+            </Badge>
+          </ClientOnly>
         </div>
 
         <div class="flex justify-between items-center">
+          <SwitchLocales />
           <SwitchTheme />
-          <nuxt-link to="/dashboard" class="text-white dark:text-[var(--duolingo-mask-green)] not-first:ml-1">
-            Dashboard
-          </nuxt-link>
-          <div v-show="showLoginOut" class="not-first:ml-3">
+          <Button variant="ghost" class="text-white dark:text-[var(--duolingo-mask-green)]">
+            <nuxt-link to="/dashboard" class="text-white dark:text-[var(--duolingo-mask-green)] not-first:ml-1">
+              <Cloud class="h-[1.2rem] w-[1.2rem]" />
+            </nuxt-link>
+          </Button>
+          <Button v-show="showLoginOut" variant="ghost" class="text-white dark:text-[var(--duolingo-mask-green)]">
             <LoginLogout />
-          </div>
+          </Button>
         </div>
       </div>
     </nav>
