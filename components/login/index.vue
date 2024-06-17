@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { AlertCircle } from 'lucide-vue-next'
 import { z } from 'zod'
 import { toast } from 'vue-sonner'
 import type { GenericObject } from 'vee-validate'
@@ -15,8 +14,6 @@ const loginFieldConfig = {
     },
   },
 }
-
-const { previewMode } = useRuntimeConfig().public
 
 async function onSubmit(event: GenericObject) {
   const form = event as z.infer<typeof LoginSchema>
@@ -63,13 +60,6 @@ onMounted(async () => {
         :field-config="loginFieldConfig"
         @submit="onSubmit"
       >
-        <Alert v-if="previewMode">
-          <AlertCircle class="w-4 h-4" />
-          <AlertTitle>Tips</AlertTitle>
-          <AlertDescription>
-            The site token for preview mode is <code class="font-mono text-green-500">SinkCool</code> .
-          </AlertDescription>
-        </Alert>
         <Button class="w-full">
           Login
         </Button>
