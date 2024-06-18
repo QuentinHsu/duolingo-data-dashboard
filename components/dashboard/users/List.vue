@@ -16,8 +16,8 @@ const props = defineProps(
 </script>
 
 <template>
-  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-    <Card v-for="user in props.users" :key="user.id" class="select-none">
+  <div class="grid gap-4 md:grid-cols-2 lg:grid-cols-4 ">
+    <Card v-for="user in props.users" :key="user.id" class="select-none animate-scale-up-bottom">
       <CardHeader class="flex flex-row items-center justify-between space-y-0 pb-2">
         <CardTitle class="text-sm font-medium">
           {{ user.name }}

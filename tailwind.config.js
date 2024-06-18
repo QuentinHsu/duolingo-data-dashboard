@@ -88,7 +88,7 @@ module.exports = {
         },
       },
       borderRadius: {
-      	xl: 'calc(var(--radius) + 4px)',
+        xl: 'calc(var(--radius) + 4px)',
         lg: 'var(--radius)',
         md: 'calc(var(--radius) - 2px)',
         sm: 'calc(var(--radius) - 4px)',
@@ -110,12 +110,23 @@ module.exports = {
           from: { height: 'var(--radix-collapsible-content-height)' },
           to: { height: 0 },
         },
+        'scale-up-bottom': {
+          '0%': {
+            'transform': 'scale(.5)',
+            'transform-origin': '50% 100%',
+          },
+          'to': {
+            'transform': 'scale(1)',
+            'transform-origin': '50% 100%',
+          },
+        },
       },
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out',
         'collapsible-down': 'collapsible-down 0.2s ease-in-out',
         'collapsible-up': 'collapsible-up 0.2s ease-in-out',
+        'scale-up-bottom': 'scale-up-bottom 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both',
       },
     },
   },
